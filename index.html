@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap');
+      html{
+        height: 100vh;
+      }  
+        
+body {
+  margin:0;
+  padding:0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+}
+
+#cmpnylogo img{
+    width: 35%;
+  /* transform: translate(% , 50%); */
+  /* filter: hue-rotate(0deg) saturate(0%) contrast(0); */
+   filter: invert(100%) ;
+   
+  
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #08ffce;
+  text-align: center;
+  font-family: 'Carrois Gothic SC', sans-serif;
+  letter-spacing: 4px;
+  text-decoration: overline;
+  
+   
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 10px;
+  color: #03e9f4;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+  margin-top: 20px;
+  
+  letter-spacing: 4px;
+
+}
+
+.login-box button:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px  #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+.login-box button span {
+  position: absolute;
+  display: flex;
+  
+}
+
+.user-box i{
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
+}
+
+/* #eyeicon{
+    position: absolute;
+    width: 25px;
+     
+    filter: invert(100%);
+    cursor: pointer;
+    border: 1px solid #fff;
+    padding: 9.7px;
+}
+
+#eyeicon1{
+    position: absolute;
+    width: 9px;
+     
+    /* filter: hue-rotate(291deg); */
+    
+    /* cursor: pointer;
+    border-bottom: 1px solid #fff;
+    padding: 19px;
+   
+} */ 
+
+
+/* 
+button lines animation css  in below */
+
+.login-box button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(80deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+/* anchor tag  register css */
+
+.login-box form a {
+  position: absolute;
+  
+  display: inline-block;
+  padding: 10px 10px;
+  color: #03e9f4;
+  background: transparent;
+  border: none;
+ 
+  text-decoration: none;
+  
+  overflow: hidden;
+  transition: 0.2s;
+  margin-top: 20px;
+  margin-left: 100px;
+  letter-spacing: 4px;
+
+}
+
+.login-box a:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px  #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+.login-box a span {
+  position: absolute;
+  display: flex;
+  
+}
+
+/* #eyeicon{
+    position: absolute;
+    width: 25px;
+    border-radius: 2px;
+    filter: hue-rotate(214deg);
+    cursor: pointer;
+    padding: 9.7px;
+}
+
+#eyeicon1{
+    position: absolute;
+    width: 9px;
+     
+    filter: hue-rotate(291deg);
+    cursor: pointer;
+    border-bottom: 1px solid #fff;
+    padding: 19px;
+   
+} */
+
+
+/* 
+button lines animation css  in below */
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(80deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="login-box">
+        <h2><div id="cmpnylogo">
+            <img src="logo.png" alt="">
+        </div>Login </h2>
+        <form>
+          <div class="user-box">
+            <input type="number" name="" required="" >
+            <label>Phone Number</label>
+            <img id="eyeicon1">
+          </div>
+          <div class="user-box">
+            <input type="password" id="MyInput" name="" required="">
+            <label>Password</label>
+            <!-- <img src="eye-close.png" id="eyeicon"> --><i class="fa-solid fa-eye-slash Eyecon" style="color: #05fad198;"></i>
+          </div>
+           
+          <button  href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Login
+          </button>
+
+          <a  href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Register
+          </a>
+          
+        </form>
+      </div>
+      <script>
+           const Eyecon = document.querySelectorAll('.Eyecon');
+        const x=document.querySelectorAll('#MyInput')
+        for(let i=0;i<Eyecon.length;i++){
+          Eyecon[i].addEventListener('click',()=>{
+            if(x[i].type==="password"){
+              x[i].type="text";
+              Eyecon[i].classList.add('fa-eye')
+             
+            }
+            else{
+              x[i].type="password";
+              Eyecon[i].classList.remove('fa-eye')
+              
+            }
+          })
+        }
+
+      </script>
+    </body>
+</html>
